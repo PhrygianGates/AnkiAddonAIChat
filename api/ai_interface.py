@@ -13,7 +13,7 @@ class AIInterface:
             "en": "Respond as if you are having a face-to-face chat with the user. Keep your responses concise and to the point.",
             "fr": "Répondez comme si vous discutiez en face à face avec l'utilisateur. Gardez vos réponses concises et précises."
         }.get(self.language, "en")
-        full_message = f"{system_prompt}\nCard Content: {card_content}\nAdditional Info: {additional_info}\nChat History:\n{chat_history}"
+        full_message = f"Card Content: {card_content}\nAdditional Info: {additional_info}\nChat History:\n{chat_history}\nSystem Prompt: {system_prompt}"
         if self.debug:
             print(f"Sending to AI: {full_message}")
         try:
@@ -58,7 +58,7 @@ class AIInterface:
             "en": f"Generate {num_questions} questions that help the user understand and remember the content. The user has seen this card before but is not currently viewing it.",
             "fr": f"Générez {num_questions} questions qui aident l'utilisateur à comprendre et à se souvenir du contenu. L'utilisateur a déjà vu cette carte mais ne la regarde pas actuellement."
         }.get(self.language, "en")
-        full_message = f"{system_prompt}\nCard Content: {card_content}\nAdditional Info: {additional_info}\nPurposes: {purposes}"
+        full_message = f"Card Content: {card_content}\nAdditional Info: {additional_info}\nPurposes: {purposes}\nSystem Prompt: {system_prompt}"
         if self.debug:
             print(f"Sending to AI: {full_message}")
         try:
