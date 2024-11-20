@@ -19,7 +19,6 @@ anki-addon-ai-chat/
 │   ├── helpers.py
 │   └── __init__.py
 ├── config.py
-├── language_settings.py
 └── README.md
 ```
 
@@ -83,12 +82,7 @@ An initializer to mark the `utils/` folder as a Python package, enabling easy im
 Holds user-configurable settings, such as API keys, parameters for the AI model, and other settings that a user might want to modify.
 - You could allow users to specify the model type or temperature settings.
 
-#### 13. `language_settings.py`
-This file will handle the language settings for the add-on.
-- Allows users to select the language (English or French) for interacting with the AI.
-- Provides methods to get the appropriate prompts and responses based on the selected language.
-
-#### 14. `README.md`
+#### 13. `README.md`
 Documentation for the add-on.
 - Instructions on how to install, set up, and use the add-on.
 - Provides any troubleshooting information for users.
