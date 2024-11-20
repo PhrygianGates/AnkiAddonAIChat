@@ -1,5 +1,5 @@
 class Config:
-    API_KEY = "AIzaSyBgPHinile04safxFZFp6ouNiNRuGFm2Yg"
+    API_KEY = "input your gemini api key here"
     LANGUAGE = "fr"  # Default language is French
 
     @staticmethod
@@ -31,5 +31,7 @@ class Config:
         }
         with open(file_path, 'w') as file:
             json.dump(data, file, indent=4)
+
+Config.load_from_file("config.json")
 
 

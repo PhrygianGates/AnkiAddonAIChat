@@ -8,6 +8,7 @@ anki-addon-ai-chat/
 ├── gui/
 │   ├── chat_window.py
 │   └── __init__.py
+│   └── config_window.py
 ├── api/
 │   ├── ai_interface.py
 │   └── __init__.py
