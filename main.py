@@ -12,8 +12,8 @@ def start_chat():
         card_content = fields[0]
         additional_info = "\n".join(fields[1:])
     else:
-        card_content = "No content available"
-        additional_info = "No additional information available"
+        showInfo("Please open the card view to start a chat.")
+        return
     
     chat_window = ChatWindow(card_content=card_content, additional_info=additional_info, language=Config.get_language())
     chat_window.exec()
