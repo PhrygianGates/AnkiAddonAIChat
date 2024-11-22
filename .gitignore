@@ -129,3 +129,6 @@ anki/
 log
 
 config.json
+workspace/
+*.m4a
+.DS_Store

@@ -1,6 +1,7 @@
-from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QLineEdit, QPushButton
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QLineEdit, QPushButton, QHBoxLayout
 from ..api.ai_interface import AIInterface
 from ..config import Config
+from ..utils.record_audio import AudioRecorder
 
 class ChatWindow(QDialog):
     def __init__(self, parent=None, card_content="", additional_info="", language="en"):
@@ -19,7 +20,15 @@ class ChatWindow(QDialog):
         
         self.send_button = QPushButton("Send", self)
         self.send_button.clicked.connect(self.send_message)
-        self.layout.addWidget(self.send_button)
+        
+        self.audio_recorder = AudioRecorder()
+
+        self.record_button = QPushButton("Record", self)
+        self.record_button.clicked.connect(self.record_audio)
+        button_layout = QHBoxLayout()
+        button_layout.addWidget(self.send_button)
+        button_layout.addWidget(self.record_button)
+        self.layout.addLayout(button_layout)
         
         self.setLayout(self.layout)
         
@@ -56,3 +65,8 @@ class ChatWindow(QDialog):
             self.question_counter += 1
         else:
             self.chat_display.append("AI: No more questions for now. Good luck with your studies!")
+
+    def record_audio(self):
+        transcribed_text = self.audio_recorder.record_and_transcribe()
+        if transcribed_text:
+            self.input_field.setText(transcribed_text)
