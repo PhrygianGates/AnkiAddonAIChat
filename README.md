@@ -9,7 +9,7 @@ This Anki add-on enables chatting with an AI around each card word. It integrate
 - Configurable API key and language settings.
 
 ## Installation
-1. Download the add-on files and place them in your Anki add-ons directory, since it's not published in anki community yet.
+1. Anki Addon ID: 1442059032
 
 ## Configuration
 1. Open Anki and go to `Tools > AI Chat > Configure`.
