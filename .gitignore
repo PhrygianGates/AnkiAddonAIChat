@@ -127,3 +127,5 @@ anki/
 
 # log files
 log
+
+config.json
